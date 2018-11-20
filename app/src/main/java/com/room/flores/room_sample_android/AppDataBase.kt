@@ -16,10 +16,10 @@ abstract class AppDataBase : RoomDatabase() {
         private var INSTANCE: AppDataBase? = null
         fun getInstance(context: Context): AppDataBase? {
             if (INSTANCE == null) {
-                synchronized(AppDataBase::class) {
+//                synchronized(AppDataBase::class) {
                     INSTANCE = Room.databaseBuilder(context.applicationContext,
                         AppDataBase::class.java, "databaseprueba").allowMainThreadQueries().build()
-                }
+//                }
             }
             return INSTANCE
         }

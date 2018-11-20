@@ -15,10 +15,8 @@ class MainActivity : AppCompatActivity() {
         val db =AppDataBase.getInstance(applicationContext)
         val user=UserEntity(0,"Bill Flores","72089545")
 
-        db!!.UserDao().insert(user)
-
-
         button.setOnClickListener(View.OnClickListener {
+            db!!.UserDao().insert(user)
             Log.i("information",db.UserDao().getAll().toString())
         })
     }
